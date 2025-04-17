@@ -1,0 +1,117 @@
+.p-about__box {
+  padding: 20px;
+  position: relative;
+  margin-right: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s linear;
+}
+
+.p-about__box.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+  .p-about__title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .p-about__box-en {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  
+  .p-about__box-ja {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  
+  [data-theme='white'] .p-about__title,
+[data-theme='white'] .p-about__box-en,
+[data-theme='white'] .p-about__box-ja {
+  color: black;
+}
+
+[data-theme='black'] .p-about__title,
+[data-theme='black'] .p-about__box-en,
+[data-theme='black'] .p-about__box-ja {
+  color: white;
+}
+
+.p-about__title,
+.p-about__box-en,
+ .p-about__box-ja {
+  letter-spacing: 0.5px;
+}
+
+.social-icons { 
+  margin-top: 20px;
+  margin-left: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.github-icon {
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.github-icon{
+  display: inline-block;
+  transition: opacity .4s ease;
+  transition-behavior: normal;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: opacity;
+}
+
+.github-icon:hover {
+  opacity: 0.5;
+}
+
+.facebook-icon {
+  margin-top: 1px;
+  width: 33px;
+  height: 33px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.facebook-icon{
+  display: inline-block;
+  transition: opacity .4s ease;
+  transition-behavior: normal;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: opacity;
+}
+
+.facebook-icon:hover {
+  opacity: 0.5;
+}
+
+[data-theme='white'] .github-icon {
+  background-image: url('/github-mark.svg');
+}
+[data-theme='white'] .facebook-icon {
+  background-image: url('/black-facebook.svg');
+}
+
+[data-theme='black'] .github-icon {
+  background-image: url('/github-mark-white.svg');
+}
+[data-theme='black'] .facebook-icon {
+  background-image: url('/white-facebook.svg');
+}

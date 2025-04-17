@@ -1,0 +1,142 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s;
+}
+
+.headerTitle {
+  letter-spacing: 2px !important;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.headerTitle{
+  display: block;
+  transition: opacity .4s ease;
+  transition-behavior: normal;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: opacity;
+}
+
+.headerTitle:hover {
+  opacity: 0.5;
+}
+/* New wrapper for right-side controls */
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.themeSwitch {
+  margin-right: 20px;
+  margin-top: 25px;
+}
+
+.buttonAbout {
+  margin-right: 20px;
+  margin-top: 25px;
+}
+
+/* Theme color rules remain unchanged */
+[data-theme='white'] .header {
+  color: black;
+}
+
+[data-theme='black'] .header {
+  color: white;
+}
+
+.buttonAboutTextWrapper {
+  position: relative;
+  display: inline-block;
+  height: 1.45em; /* Adjust as needed for your font size */
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.buttonAboutTextDefault,
+.buttonAboutTextHover {
+  left: 0;
+  width: 100%;
+  display: block;
+  color: var(--color-ui-text);
+  text-align: center;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.buttonAboutTextDefault {
+  top: 0;
+  transform: translateY(0%);
+}
+
+.buttonAboutTextHover {
+  top: 0;
+  transform: translateY(110%);
+  /* Hidden below by default */
+}
+
+.buttonAbout:hover .buttonAboutTextDefault,
+.buttonAbout:focus .buttonAboutTextDefault {
+  transform: translateY(-110%);
+}
+
+.buttonAbout:hover .buttonAboutTextHover,
+.buttonAbout:focus .buttonAboutTextHover {
+  transform: translateY(-100%);
+}
+
+[data-theme='black'] .buttonAbout {
+  background: white !important;
+  color: black !important;
+}
+
+[data-theme='black'] .buttonAbout:hover,
+[data-theme='black'] .buttonAbout:focus {
+  background: #f3f3f3 !important;
+  color: black !important;
+}
+
+.buttonAboutActive {
+  /* Blurry, gray-like look */
+  background: rgba(120, 120, 120, 0.25) !important;
+  color: #222 !important;
+  backdrop-filter: blur(5px);
+  border: none;
+  outline: none;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+  pointer-events: none;   /* Disable all mouse events */
+  cursor: default !important; 
+  opacity: 0.5;/* No pointer cursor */
+}
+
+/* For dark theme */
+[data-theme='black'] .buttonAboutActive {
+  background: rgba(120, 120, 120, 0.25) !important;
+  color: #eee !important;
+  backdrop-filter: blur(5px);
+  border: none;
+  outline: none;
+  pointer-events: none;
+  cursor: default !important;
+  opacity: 0.5;
+}
+
+/* Prevent hover/focus transitions when active */
+.buttonAboutActive:hover,
+.buttonAboutActive:focus {
+  background: rgba(120, 120, 120, 0.25) !important;
+  color: #222 !important;
+  opacity: 0.5;
+}
+
+/* For dark theme */
+[data-theme='black'] .buttonAboutActive:hover,
+[data-theme='black'] .buttonAboutActive:focus {
+  background: rgba(120, 120, 120, 0.25) !important;
+  color: #eee !important;
+  opacity: 0.5;
+}
