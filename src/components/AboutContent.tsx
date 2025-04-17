@@ -14,9 +14,9 @@ export default function AboutContent() {
       <h1 className={styles["p-about__title"]}>About</h1>
 
       <p className={styles["p-about__box-en"]}>
-        I&apos;mm Nguyen Hai Anh.
+        I&apos;m Nguyen Hai Anh.
         I work as a front-end engineer.<br />
-        On this site, I&apos;mve featured the theme switching function using customized shadcn/ui components.<br />
+        On this site, I&apos;ve featured the theme switching function using customized shadcn/ui components.<br />
         I enjoy exploring various techniques, including interactive 3D expressions and web animations.
       </p>
 
