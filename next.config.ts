@@ -12,7 +12,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   // Enable SWC-based minification for faster builds
-  swcMinify: true,
 
   // Optional: set custom asset prefix or basePath if needed
   // basePath: "/your-subpath",
