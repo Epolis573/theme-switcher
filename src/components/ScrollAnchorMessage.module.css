@@ -86,7 +86,7 @@
   transition: color 0.3s cubic-bezier(0.08, 0.3, 0.54, 0.91);
 }
 .link:hover .text {
-  color: #e4691d;
+  color:  #2596be;
 }
 .arrowWrap {
   position: absolute;
@@ -118,7 +118,7 @@
   transition: background-color 0.3s cubic-bezier(0.08, 0.3, 0.54, 0.91);
 }
 .link:hover .arrowButton {
-  background-color: #e4691d;
+  background-color:  #2596be;
 }
 .arrowIcon {
   width: 4.75rem;
