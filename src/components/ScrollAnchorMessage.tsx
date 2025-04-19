@@ -1,20 +1,26 @@
-
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import styles from './ScrollAnchorMessage.module.css';
 import Splide from '@splidejs/splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/splide/dist/css/splide.min.css';
 
+// Extend HTMLDivElement to allow custom 'splide' property
+interface SplideDivElement extends HTMLDivElement {
+  splide?: Splide;
+}
+
 const ScrollAnchorMessage: React.FC = () => {
-  const splideRef = useRef<HTMLDivElement>(null);
+  const splideRef = useRef<SplideDivElement>(null);
 
   useEffect(() => {
-    if (splideRef.current) {
+    const currentDiv = splideRef.current;
+    if (currentDiv) {
       // Destroy any previous instance to avoid duplicates
-      if ((splideRef.current as any)?.splide) {
-        (splideRef.current as any).splide.destroy();
+      if (currentDiv.splide) {
+        currentDiv.splide.destroy();
       }
-      const splide = new Splide(splideRef.current, {
+      const splide = new Splide(currentDiv, {
         type: 'loop',
         perPage: 3,
         gap: '1.25rem',
@@ -23,14 +29,14 @@ const ScrollAnchorMessage: React.FC = () => {
         drag: false,
         autoWidth: true,
         autoScroll: {
-          speed: 1.5, // Adjust for your preferred speed (positive: right→left, negative: left→right)
+          speed: 1.5,
           pauseOnHover: false,
           pauseOnFocus: false,
         },
       });
       splide.mount({ AutoScroll });
       // Store instance for clean-up if needed
-      (splideRef.current as any).splide = splide;
+      currentDiv.splide = splide;
       // cleanup
       return () => {
         splide.destroy();
@@ -65,15 +71,16 @@ const ScrollAnchorMessage: React.FC = () => {
                       aria-hidden={i !== 1}
                     >
                       <div className={styles.thumbnail}>
-                        <img
+                        <Image
                           src="/images/bannerscrollanchor.gif"
-                          alt=""
+                          alt="Scroll anchor banner"
                           width={86}
                           height={57}
+                          priority
                         />
                       </div>
                       <p className={styles.text}>
-                      Find my other works here | こちらから他の作品をご覧いただけます。
+                        Find my other works here | こちらから他の作品をご覧いただけます。
                       </p>
                     </li>
                   ))}
@@ -82,15 +89,21 @@ const ScrollAnchorMessage: React.FC = () => {
             </div>
             <div className={styles.arrowWrap}>
               <span className={styles.arrowButton}>
-                <img
+                <Image
                   src="/right-arrow.svg"
                   alt="Right Arrow"
+                  width={26} // Example values, adjust as needed
+                  height={18}
                   className={`${styles.arrowIcon} ${styles.arrowIconBefore} md:w-6.5 md:h-4.5`}
+                  priority
                 />
-                <img
+                <Image
                   src="/right-arrow.svg"
                   alt="Right Arrow"
+                  width={26} // Example values, adjust as needed
+                  height={18}
                   className={`${styles.arrowIcon} ${styles.arrowIconAfter} md:w-6.5 md:h-4.5`}
+                  priority
                 />
               </span>
             </div>
