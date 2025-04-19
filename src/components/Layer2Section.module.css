@@ -1,0 +1,8 @@
+/* Example only: migrate only unique or necessary Layer2 styles! Tailwind/utility-first classes remain as className on TSX. */
+
+.secMessage {
+    /* Any section-specific CSS (if needed) */
+  }
+  
+  /* You may need to add more scoped class names if you want to override inline styles or add more special styles! */
+  /* Most layout and appearance is done via utility classes. For sophisticated state (animations, etc.) use GSAP as before. */

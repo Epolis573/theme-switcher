@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react'
 import Home from "../components/Home"
 import Header from '../components/Header';
+import ScrollAnchorMessage from '@/components/ScrollAnchorMessage';
+import ScrollComponent from '@/components/ScrollComponent';
 
 export default function Page() {
    const [opacity, setOpacity] = useState(0.55)
@@ -28,8 +30,10 @@ export default function Page() {
   
   return (
     <>
+    <ScrollComponent />
     <Header />
     <Home bgOpacity={opacity}/>
+    <ScrollAnchorMessage/> 
     </>
     
   );
